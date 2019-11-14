@@ -1,0 +1,9 @@
+<p>social-posts works!</p>
+<div class="bigholder">
+  <div class="container">
+    <button>New Thought</button>
+    <div class="outline">
+      <app-post *ngFor="let post of posts; index as i" [post]="post" (deleted)="onDelete(i)"></app-post>
+    </div>
+  </div>
+</div>
