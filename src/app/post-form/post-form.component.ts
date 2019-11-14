@@ -1,7 +1,5 @@
-import { Component, OnInit, Output } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { Post } from "../post";
-import { EventEmitter } from "events";
-import { post } from "selenium-webdriver/http";
 
 @Component({
   selector: "app-post-form",
@@ -18,6 +16,10 @@ export class PostFormComponent implements OnInit {
   constructor() {}
   submitPost() {
     this.submitted.emit(this.newPost);
+    this.newPost = {
+      title: "",
+      thought: ""
+    };
   }
   ngOnInit() {}
 }
